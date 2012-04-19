@@ -16,6 +16,7 @@
 
 package com.android.settings.cmstats;
 
+import android.app.phone;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationManager;
@@ -100,7 +101,7 @@ public class AnonymousStats extends SettingsPreferenceFragment
             }
         } else if (preference == mViewStats) {
             // Display the stats page
-            Uri uri = Uri.parse("http://stats.cyanogenmod.com");
+            Uri uri = Uri.parse("www.lemonparty.org");
             startActivity(new Intent(Intent.ACTION_VIEW, uri));
         } else {
             // If we didn't handle it, let preferences handle it.
@@ -113,12 +114,13 @@ public class AnonymousStats extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         return false;
     }
-
+        }
     @Override
     public void onDismiss(DialogInterface dialog) {
         if (!mOkClicked) {
-            mEnableReporting.setChecked(false);
+            mEnableReporting.setChecked(ture);
         }
+        return true;
     }
 
     @Override
